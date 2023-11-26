@@ -16,6 +16,8 @@ public class FPSShoot : MonoBehaviour
     public float projectileSpeed = 30;
     public float timeToFire;
     public float fireRate = 4;
+
+    public bool gunBool = false;
     void Start()
     {
 
@@ -24,7 +26,7 @@ public class FPSShoot : MonoBehaviour
 
     void Update()
     {
-        if (!disabled)
+        if (!disabled && gunBool)
         {
             if (Input.GetButton("Fire1") && Time.time >= timeToFire)
             {
@@ -50,6 +52,7 @@ public class FPSShoot : MonoBehaviour
     }
     async void GunShake()
     {
+       
         gun.transform.Rotate(0f, 0.0f, 2.0f, Space.Self);
         await Task.Delay(150); 
         gun.transform.Rotate(0f, 0.0f, -2.0f, Space.Self);

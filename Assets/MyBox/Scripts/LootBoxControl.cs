@@ -6,7 +6,7 @@ public class LootBoxControl : MonoBehaviour
 {
     Animator animator;
 
-     void Start()
+    void Start()
     {
         animator = GetComponent<Animator>();
     }
@@ -16,8 +16,13 @@ public class LootBoxControl : MonoBehaviour
         if (coll.gameObject.CompareTag("Player"))
         {
             animator.SetBool("Open", true);
-            Destroy(gameObject,10f);
-        } 
+
+            if (this.gameObject.CompareTag("GunBox") == false)
+            {
+                Destroy(gameObject, 10f);
+
+            }
+        }
 
 
     }
