@@ -9,6 +9,8 @@ TagManager:
   - Portal2
   - gun
   - GunBox
+  - Enemy
+  - RPGBullet
   layers:
   - Default
   - TransparentFX

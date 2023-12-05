@@ -4,7 +4,7 @@ using UnityEngine;
 public class TeleportControl : MonoBehaviour
 {
     public Transform PlayerPos;
-    public Transform LootBoxRoomPos;
+    public Transform Pos1;
     public GameObject Player;
 
     CharacterControl characterControl;
@@ -30,7 +30,7 @@ public class TeleportControl : MonoBehaviour
 
         characterControl.disabled = true;
         fPSShoot.disabled = true;
-        PlayerPos.position = LootBoxRoomPos.position;
+        PlayerPos.position = Pos1.position;
         yield return new WaitForSeconds(0.3f);
         characterControl.disabled = false;
         fPSShoot.disabled = false;
